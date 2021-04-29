@@ -13,3 +13,4 @@ List of topics:
   <li>Frameworks used: Waypoints, Animate CSS.
   <li>Media Queries.
   <li>Optimization: image optimization, code minification, meta description tag, HTML validation.
+  <li>Basic SEO and Google Analytics.
