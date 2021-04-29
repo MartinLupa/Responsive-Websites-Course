@@ -2,7 +2,7 @@
 Project done as part of the Build Responsive Websites with HTML5 and CSS3 course by Jonas Schmedtmann.
 Course: https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/
 
-Deploy: 
+Deploy: https://martinlupa.github.io/Responsive-Websites-Course/
 
 List of topics:
 <ul>
