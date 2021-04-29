@@ -6,10 +6,10 @@ Deploy: https://martinlupa.github.io/Responsive-Websites-Course/index.html
 
 List of topics:
 <ul>
-  <li>HTML5
-  <li>CSS3
-  <li>Web Design
+  <li>HTML5.
+  <li>CSS3.
+  <li>Web Design.
   <li>Javascript, use of jQuery.
-  <li>Frameworks used: Waypoints, Animate CSS
-  <li>Media Queries
+  <li>Frameworks used: Waypoints, Animate CSS.
+  <li>Media Queries.
   <li>Optimization: image optimization, code minification, meta description tag, HTML validation.
