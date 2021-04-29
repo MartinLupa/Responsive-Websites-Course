@@ -1,0 +1,557 @@
+/* ------------------------------- */
+/* --------- BASIC SETUP --------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  color: #555;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  /* https://css-tricks.com/almanac/properties/t/text-rendering/#:~:text=optimizeLegibility%20%E2%80%93%20The%20browser%20emphasizes%20legibility,font%20file%20for%20certain%20fonts. */
+  overflow-x: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ------------------------------- */
+/* ----- REUSABLE COMPONENTS ----- */
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 100px 0px;
+}
+
+.box {
+  padding: 1%;
+}
+
+/* ------------------------------- */
+/* ----------- HEADER ------------ */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh
+    /* Sets height to the height of the viewport.*/
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo,
+.logo-black {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.logo-black {
+  display: none;
+  height: 60px;
+  width: auto;
+  float: left;
+  margin: 5px 0;
+}
+
+/* ------MAIN NAV ------ */
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 50px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.main-nav li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-nav li a:hover {
+  border-bottom: 2px solid #e67e22;
+  transition: background-color 0.2s;
+  /* Another possible effect I created */
+  /* background-color: rgba(255, 255, 255, 0.3); */
+}
+
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #fff;
+}
+
+/* --------- STICKY NAV ------- */
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 2px #efefef;
+  transition: 0.2s;
+  z-index: 9999;
+  /*Vertical stacking of the element*/
+}
+
+.sticky .main-nav {
+  margin-top: 25px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  padding: 22px 0;
+  color: #555;
+}
+
+.sticky .logo {
+  display: none;
+}
+
+.sticky .logo-black {
+  display: block;
+}
+
+/* --------- HEADINGS --------- */
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 200%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: "";
+  width: 100px;
+  margin: 30px auto;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+/* --------- PARAGRAPHS --------- */
+.long-copy {
+  line-height: 150%;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+  text-align: justify;
+}
+
+/* --------- LINKS --------- */
+a:link,
+a:active {
+  color: #e67e22;
+  text-decoration: none;
+}
+
+/* --------- ICONS --------- */
+.icon-big {
+  font-size: 350%;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.icon-small {
+  display: inline-block;
+  /* To align icons vertically */
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+  font-size: 120%;
+  vertical-align: center;
+  /* Aligning text and icons */
+  margin-bottom: -4px;
+}
+
+/* --------- BUTTONS --------- */
+.btn:link,
+.btn:visited,
+input[type=submit] {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.btn-full,
+input[type=submit] {
+  background-color: #cf6d17;
+  border: 1px solid #cf6d17;
+  color: #fff;
+}
+
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+  background-color: #e67e22;
+}
+
+.btn-ghost {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ------------------------------- */
+/* -------- SECTION MEALS -------- */
+.section-meals {
+  padding: 0;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meals-img {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.meals-img img {
+  filter: brightness(70%);
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition-duration: 0.5s;
+}
+
+.meals-img img:hover {
+  filter: brightness(90%);
+  transform: scale(1.03);
+}
+
+/* ------------------------------- */
+/* --------- SECTION HOW --------- */
+.section-how {
+  background-color: #f4f4f4;
+  padding: 80px;
+}
+
+.iphone-img {
+  width: 50%;
+}
+
+.steps-box {
+  margin-top: 30px;
+}
+
+.steps-box:first-child {
+  text-align: center;
+  padding-right: 10%;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  display: inline-block;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 10px;
+  float: left;
+  margin-right: 25px;
+}
+
+.btn-app img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* ------------------------------- */
+/* ------- SECTION CITIES -------- */
+.cities-box img {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.city-feature {
+  margin-bottom: 5px;
+}
+
+.cities-box div {
+  margin-bottom: 10px;
+}
+
+/* ------------------------------- */
+/* ---------- CUSTOMERS ---------- */
+.section-testimonials {
+  color: #fff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back-customers.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+}
+
+blockquote:before {
+  content: "\201C";
+  /* Adds text directly on CSS */
+  font-size: 70px;
+  display: block;
+}
+
+cite {
+  display: block;
+  font-size: 90%;
+  margin-top: 25px;
+}
+
+cite img {
+  border-radius: 50%;
+  height: 70px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* ------------------------------- */
+/* ---------- CUSTOMERS ---------- */
+.section-plans {
+  background-color: #f4f4f4;
+}
+
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 2px 2px #e3e3e3;
+}
+
+.plan-box div {
+  padding: 15px;
+  border-bottom: 1px solid #eBeBeB;
+  /*Adds a border between divs */
+}
+
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.plan-price {
+  font-size: 250%;
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.plan-price span {
+  font-size: 70%;
+  font-weight: 100;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none;
+}
+
+.plan ul li {
+  padding: 5px;
+}
+
+.plan-box div:last-child {
+  text-align: center;
+}
+
+.testimonials-row {
+  padding-top: 70px;
+}
+
+/* ------------------------------- */
+/* ------------- FORM ------------ */
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type=text],
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type=checkbox] {
+  margin: 10px 5px 10px 0px;
+}
+
+/* ------------------------------- */
+/* ------------ FOOTER ----------- */
+footer {
+  background-color: #333;
+  padding-bottom: 20px;
+}
+
+footer p {
+  text-align: center;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.footer-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.footer-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.footer-links li a:link,
+.footer-links li a:visited {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:hover {
+  color: #ddd;
+}
+
+.ion-social-facebook:hover {
+  color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+  color: #1da1f2;
+}
+
+.ion-social-googleplus:hover {
+  color: #db4437;
+}
+
+.ion-social-instagram:hover {
+  color: #c32aa3;
+}
+
+/* ------------------------------- */
+/* --------- ANIMATIONS ---------- */
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+  opacity: 0;
+  /*To make element invisible and then use animation to show it*/
+}
+
+.js--wp-1 .animated,
+.js--wp-2 .animated,
+.js--wp-3 .animated {
+  opacity: 1;
+}
