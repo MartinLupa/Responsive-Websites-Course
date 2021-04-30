@@ -1,6 +1,8 @@
 # Responsive-Websites-Course
 Project done as part of the Build Responsive Websites with HTML5 and CSS3 course by Jonas Schmedtmann.
-Course: https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/<br>
+
+Course: https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/
+
 Certificate: https://www.udemy.com/certificate/UC-fd5c9d0e-e78e-4508-9d95-e792bc7f47a1/
 
 Deploy: https://martinlupa.github.io/Responsive-Websites-Course/index.html
